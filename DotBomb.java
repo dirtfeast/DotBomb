@@ -1,17 +1,19 @@
 import java.util.*;
 
 public class DotBomb {
-    
-    public void main(String args[]){
 
     // Instantiate GameHelper object
-    GameHelper helper = new GameHelper();
+    private GameHelper helper = new GameHelper();
 
+    // Declare ArrayList of DotCom objects
+    private ArrayList<DotCom> dotComsList = new ArrayList<DotCom>();
 
     // Start tracking number of guesses
-    int numOfGuesses = 0;
+    private int numOfGuesses = 0;
 
-    void setUpGame(); {
+    public void main(String args[]){
+
+    private void setUpGame() {
     // create three DotComt objects
         DotCom dotcom0 = new DotCom();
         DotCom dotcom1 = new DotCom();
@@ -19,30 +21,38 @@ public class DotBomb {
         
     // Give each DotCom a name (set instance variable)
         dotcom0.name = "Pets.com";
-        dotcom1.name = "Ask.com"
-        dotcom2.name = "Go2.com"
+        dotcom1.name = "eToys.com";
+        dotcom2.name = "Go2.com";
 
-    // Add names to ArrayList
-        ArrayList<String> dotComsList = new ArrayList<String>();
-        dotComsList.add(dotcom0.name);
-        dotComsList.add(dotcom1.name);
-        dotComsList.add(dotcom2.name);
+    // Add DotCom objects to ArrayList
+        dotComsList.add(dotcom0);
+        dotComsList.add(dotcom1);
+        dotComsList.add(dotcom2);
 
-    // Call for random locations for each DotCom
-        helper.placeDotCom();
-    // Assign results of placeDotComt() to location for each DotCom
-    // something like dotcom0.locations = int array[]
-        
-    // -- display brief instructions to user
-    }
-    
-    void startPlaying(); {
+    // Display brief instructions to user
+        System.out.println("Instructions");
+
+    // Loop through each object in ArrayList
+        for (DotCom dotComToSet : dotComsList) {
+
+        // -- call to helper.placeDotCom for ArrayList<String> of 3 locations
+        // Call for random locations for each DotCom
+        // Assign results of placeDotCom() to location for each DotCom
+            ArrayList<String> newLocation = helper.placeDotCom(3);
+            dotComToSet.setLocationCells(newLocation);
+        } // Close for
+    } // Close method setUpGame()
+
+    private void startPlaying() {
     // repeat while any locations remain
-        while (any locations left) {
+        while (!dotComsList.isEmpty()) {
             // -- get user input guess
+            String userGuess = helper.getUserInput("Enter a guess");
             // -- evaluate guess via checkUserGuess()
-            
-        }
+            checkUserGuess(userGuess);
+        } // Close while
+        finishGame();
+    } // Close method startPlaying()
     
     void checkUserGuess(); {
     // increment tally of guesses
@@ -61,7 +71,7 @@ public class DotBomb {
     // Tabulate score
     // Print quality ratint
     
-    }
+    } // Close method finishGame()
     
     
     
