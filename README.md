@@ -7,4 +7,4 @@ If a hit/kill remove location/DotCom from the list.
 
 Practice exercise from Head First Java
 Learning about ArrayList of objects (DotCom).
-Main() in class.
+Main() in DotBomb.java class.
