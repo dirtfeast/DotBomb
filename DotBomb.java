@@ -20,9 +20,9 @@ public class DotBomb {
         DotCom dotcom2 = new DotCom();
         
     // Give each DotCom a name (set instance variable)
-        dotcom0.name = "Pets.com";
-        dotcom1.name = "eToys.com";
-        dotcom2.name = "Go2.com";
+        dotcom0.setName("Pets.com");
+        dotcom1.setName("eToys.com");
+        dotcom2.setName("Go2.com");
 
     // Add DotCom objects to ArrayList
         dotComsList.add(dotcom0);

@@ -14,12 +14,11 @@ public class GameHelper {
         System.out.println(prompt + "  ");
         try {
             BufferedReader is = new BufferedReader(new InputStreamReader(System.in));
-            inputLine = is.readLIne();
+            inputLine = is.readLine();
             if (inputLine.length() == 0) return null;
         } catch (IOException e)
             { System.out.println("IOException: " + e); }
             
-        } // Close try
         return inputLine.toLowerCase();
     } // Close method getUserInput()
 
@@ -34,9 +33,7 @@ public ArrayList<String> placeDotCom(int comSize) {
 
     comCount++;
     int incr = 1;
-    if ((count % 2) == 1) {
-        incr = gridLength;
-    } // Close if
+    if ((comCount % 2) == 1) { incr = gridLength; }
 
     while ( !success & attempts++ < 200 ) {
         location = (int) (Math.random() * gridSize);
@@ -46,7 +43,7 @@ public ArrayList<String> placeDotCom(int comSize) {
             if (grid[location] == 0) {
                 coords[x++] = location;
                 location += incr;
-                if (location >= gridSize) { success = false }
+                if (location >= gridSize) { success = false; }
                     else { success = false; }
             } // Close if
         } // Close while
@@ -70,7 +67,4 @@ public ArrayList<String> placeDotCom(int comSize) {
 } // Close method placeDotCom()
 
 
-
-
-    
 } // Close class GameHelper
