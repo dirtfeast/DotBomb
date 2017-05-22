@@ -33,9 +33,7 @@ public ArrayList<String> placeDotCom(int comSize) {
 
     comCount++;
     int incr = 1;
-    if ((comCount % 2) == 1) {
-        incr = gridLength;
-    } // Close if
+    if ((comCount % 2) == 1) { incr = gridLength; }
 
     while ( !success & attempts++ < 200 ) {
         location = (int) (Math.random() * gridSize);
@@ -69,7 +67,4 @@ public ArrayList<String> placeDotCom(int comSize) {
 } // Close method placeDotCom()
 
 
-
-
-    
 } // Close class GameHelper
