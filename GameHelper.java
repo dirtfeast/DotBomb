@@ -57,9 +57,12 @@ public ArrayList<String> placeDotCom(int comSize) {
     while (x < comSize) {
         grid[coords[x]] = 1;
         row = (int) (coords[x] / gridLength);
-        column = coords[x] * gridLength;
+        column = coords[x] % gridLength;
         temp = String.valueOf(alphabet.charAt(column));
+        alphaCells.add(temp.concat(Integer.toString(row)));
         x++;
+
+        System.out.println("  coord"+x+" = " + alphaCells.get(x-1));
     } // Close while
 
     return alphaCells;
